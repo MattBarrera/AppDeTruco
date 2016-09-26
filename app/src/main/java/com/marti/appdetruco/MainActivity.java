@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void envidoAPuntosEnvido(View view){
-        if (clickEnvido == 0){
+        if (clickEnvido == 0 || clickEnvido == 1){
             TextView puntosEnvido = (TextView) findViewById(R.id.puntosDisputados1);
             String texto = puntosEnvido.getText().toString();
 
