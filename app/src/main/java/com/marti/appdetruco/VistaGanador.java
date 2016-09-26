@@ -24,6 +24,20 @@ public class VistaGanador extends AppCompatActivity {
         unGanador.setText(unMensajeRecibido);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Intent unIntent = getIntent();
+
+        Bundle unBundle = unIntent.getExtras();
+
+        unMensajeRecibido = unBundle.getString("winner");
+
+        TextView unGanador = (TextView) findViewById(R.id.ganador);
+        unGanador.setText(unMensajeRecibido);
+    }
+
     public void reiniciarJuego(){
 
         Intent unIntent = new Intent(VistaGanador.this, MainActivity.class);
