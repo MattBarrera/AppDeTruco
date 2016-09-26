@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void envidoAPuntosEnvido(View view){
-        if (clickEnvido < 1){
+        if (clickEnvido == 0){
             TextView puntosEnvido = (TextView) findViewById(R.id.puntosDisputados1);
             String texto = puntosEnvido.getText().toString();
 
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void realEnvidoPuntosEnvido(View view){
-        if (clickRealEnvido < 1 ){
+        if (clickRealEnvido == 0 ){
             TextView puntosRealEnvido = (TextView) findViewById(R.id.puntosDisputados1);
             String texto = puntosRealEnvido.getText().toString();
 
@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     public void trucoAPuntosTruco(View view){
-        if (clickTruco < 1){
+        if (clickTruco == 0){
             TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
             String texto = puntosTruco.getText().toString();
 
@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void reTrucoAPuntosTruco(View view){
-        if (clickRetruco < 1 && clickTruco == 0){
+        if (clickRetruco == 0 && clickTruco == 0){
             TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
             String texto = puntosTruco.getText().toString();
 
@@ -224,7 +224,7 @@ public class MainActivity extends AppCompatActivity {
 
             clickRetruco++;
         }
-        if (clickTruco == 1 && clickRetruco < 1){
+        if (clickTruco == 1 && clickRetruco == 0){
             TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
             String texto = puntosTruco.getText().toString();
 
@@ -240,7 +240,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void valeCuatroAPuntosTruco(View view){
-        if (clickValeCuatro < 1 && clickRetruco == 0 && clickTruco == 0){
+        if (clickValeCuatro == 0 && clickRetruco == 0 && clickTruco == 0){
             TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
             String texto = puntosTruco.getText().toString();
 
@@ -253,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
 
             clickValeCuatro++;
         }
-        if (clickValeCuatro <1 && clickTruco == 1 && clickRetruco == 0){
+        if (clickValeCuatro == 0 && clickTruco == 1 && clickRetruco == 0){
             TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
             String texto = puntosTruco.getText().toString();
 
@@ -266,7 +266,7 @@ public class MainActivity extends AppCompatActivity {
 
             clickValeCuatro++;
         }
-        if (clickValeCuatro < 1 && clickTruco ==0 && clickRetruco == 1){
+        if (clickValeCuatro == 0 && clickTruco ==0 && clickRetruco == 1){
             TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
             String texto = puntosTruco.getText().toString();
 
@@ -279,7 +279,7 @@ public class MainActivity extends AppCompatActivity {
 
             clickValeCuatro++;
         }
-        if (clickValeCuatro < 1 && clickTruco == 1 && clickRetruco == 1){
+        if (clickValeCuatro == 0 && clickTruco == 1 && clickRetruco == 1){
             TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
             String texto = puntosTruco.getText().toString();
 

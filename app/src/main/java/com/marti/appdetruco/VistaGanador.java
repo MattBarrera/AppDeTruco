@@ -46,8 +46,4 @@ public class VistaGanador extends AppCompatActivity {
 
         startActivity(unIntent);
     }
-
-
-
-
 }
