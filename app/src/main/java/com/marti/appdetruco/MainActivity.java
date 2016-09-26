@@ -136,6 +136,8 @@ public class MainActivity extends AppCompatActivity {
         if(sumaFinal >= 30){
             ganador = ellosString;
             dispararGanador(ganador);
+
+            
         }
 
     }
