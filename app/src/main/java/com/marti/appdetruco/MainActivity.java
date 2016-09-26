@@ -9,12 +9,12 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     public String ganador;
-    public Integer clickEnvido = 0;
-    public Integer clickRealEnvido = 0;
-    public Integer clickFaltaEnvido = 0;
-    public Integer clickTruco = 0;
-    public Integer clickRetruco = 0;
-    public Integer clickValeCuatro = 0;
+    private Integer clickEnvido = 0;
+    private Integer clickRealEnvido = 0;
+    private Integer clickFaltaEnvido = 0;
+    private Integer clickTruco = 0;
+    private Integer clickRetruco = 0;
+    private Integer clickValeCuatro = 0;
 
 
     @Override
@@ -152,34 +152,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void envidoAPuntosEnvido(View view){
-        TextView puntosEnvido = (TextView) findViewById(R.id.puntosDisputados1);
-        String texto = puntosEnvido.getText().toString();
+        if (clickEnvido < 1){
+            TextView puntosEnvido = (TextView) findViewById(R.id.puntosDisputados1);
+            String texto = puntosEnvido.getText().toString();
 
-        Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
-        Integer envido = 2;
-        Integer sumaFinal = envido + sumarAEnvido;
+            Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
+            Integer envido = 2;
+            Integer sumaFinal = envido + sumarAEnvido;
 
-        String puntosTeamFinal = sumaFinal.toString();
+            String puntosTeamFinal = sumaFinal.toString();
 
-        puntosEnvido.setText(puntosTeamFinal);
+            puntosEnvido.setText(puntosTeamFinal);
 
-        clickEnvido++;
-
+            clickEnvido++;
+        }
     }
 
     public void realEnvidoPuntosEnvido(View view){
-        TextView puntosRealEnvido = (TextView) findViewById(R.id.puntosDisputados1);
-        String texto = puntosRealEnvido.getText().toString();
+        if (clickRealEnvido < 1 ){
+            TextView puntosRealEnvido = (TextView) findViewById(R.id.puntosDisputados1);
+            String texto = puntosRealEnvido.getText().toString();
 
-        Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
-        Integer sumaFinal = 3 + sumarAEnvido;
+            Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
+            Integer sumaFinal = 3 + sumarAEnvido;
 
-        String puntosTeamFinal = sumaFinal.toString();
+            String puntosTeamFinal = sumaFinal.toString();
 
-        puntosRealEnvido.setText(puntosTeamFinal);
+            puntosRealEnvido.setText(puntosTeamFinal);
 
-        clickRealEnvido++;
-
+            clickRealEnvido++;
+        }
     }
 
 //    public  void faltaEnvidoAPuntosEnvido(View view){
@@ -193,47 +195,103 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     public void trucoAPuntosTruco(View view){
-        TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
-        String texto = puntosTruco.getText().toString();
+        if (clickTruco < 1){
+            TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
+            String texto = puntosTruco.getText().toString();
 
-        Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
-        Integer sumaFinal = 2 + sumarAEnvido;
+            Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
+            Integer sumaFinal = 2 + sumarAEnvido;
 
-        String puntosTeamFinal = sumaFinal.toString();
+            String puntosTeamFinal = sumaFinal.toString();
 
-        puntosTruco.setText(puntosTeamFinal);
+            puntosTruco.setText(puntosTeamFinal);
 
-        clickTruco++;
-
+            clickTruco++;
+        }
     }
 
     public void reTrucoAPuntosTruco(View view){
-        TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
-        String texto = puntosTruco.getText().toString();
+        if (clickRetruco < 1 && clickTruco == 0){
+            TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
+            String texto = puntosTruco.getText().toString();
 
-        Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
-        Integer sumaFinal = 3 + sumarAEnvido;
+            Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
+            Integer sumaFinal = 3 + sumarAEnvido;
 
-        String puntosTeamFinal = sumaFinal.toString();
+            String puntosTeamFinal = sumaFinal.toString();
 
-        puntosTruco.setText(puntosTeamFinal);
+            puntosTruco.setText(puntosTeamFinal);
 
-        clickRetruco++;
+            clickRetruco++;
+        }
+        if (clickTruco == 1 && clickRetruco < 1){
+            TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
+            String texto = puntosTruco.getText().toString();
+
+            Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
+            Integer sumaFinal = 1 + sumarAEnvido;
+
+            String puntosTeamFinal = sumaFinal.toString();
+
+            puntosTruco.setText(puntosTeamFinal);
+
+            clickRetruco++;
+        }
     }
 
     public void valeCuatroAPuntosTruco(View view){
-        TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
-        String texto = puntosTruco.getText().toString();
+        if (clickValeCuatro < 1 && clickRetruco == 0 && clickTruco == 0){
+            TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
+            String texto = puntosTruco.getText().toString();
 
-        Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
-        Integer sumaFinal = 4 + sumarAEnvido;
+            Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
+            Integer sumaFinal = 4 + sumarAEnvido;
 
-        String puntosTeamFinal = sumaFinal.toString();
+            String puntosTeamFinal = sumaFinal.toString();
 
-        puntosTruco.setText(puntosTeamFinal);
+            puntosTruco.setText(puntosTeamFinal);
 
-        clickValeCuatro++;
+            clickValeCuatro++;
+        }
+        if (clickValeCuatro <1 && clickTruco == 1 && clickRetruco == 0){
+            TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
+            String texto = puntosTruco.getText().toString();
 
+            Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
+            Integer sumaFinal = 2 + sumarAEnvido;
+
+            String puntosTeamFinal = sumaFinal.toString();
+
+            puntosTruco.setText(puntosTeamFinal);
+
+            clickValeCuatro++;
+        }
+        if (clickValeCuatro < 1 && clickTruco ==0 && clickRetruco == 1){
+            TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
+            String texto = puntosTruco.getText().toString();
+
+            Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
+            Integer sumaFinal = 1 + sumarAEnvido;
+
+            String puntosTeamFinal = sumaFinal.toString();
+
+            puntosTruco.setText(puntosTeamFinal);
+
+            clickValeCuatro++;
+        }
+        if (clickValeCuatro < 1 && clickTruco == 1 && clickRetruco == 1){
+            TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
+            String texto = puntosTruco.getText().toString();
+
+            Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
+            Integer sumaFinal = 1 + sumarAEnvido;
+
+            String puntosTeamFinal = sumaFinal.toString();
+
+            puntosTruco.setText(puntosTeamFinal);
+
+            clickValeCuatro++;
+        }
     }
 
     public boolean terminarPartida(Integer unPuntaje){
@@ -258,7 +316,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(unIntent);
 
     }
-
-
-
 }
