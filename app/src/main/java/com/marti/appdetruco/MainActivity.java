@@ -25,6 +25,15 @@ public class MainActivity extends AppCompatActivity {
         Intent unIntent = getIntent();
 
         Bundle unBundle = unIntent.getExtras();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Intent unIntent = getIntent();
+
+        Bundle unBundle = unIntent.getExtras();
 
         TextView textView1 = (TextView) findViewById(R.id.puntosDisputados1);
         TextView textView2 = (TextView) findViewById(R.id.puntosTeam1);
@@ -35,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         textView2.setText("0");
         textView3.setText("0");
         textView4.setText("0");
+
+
     }
 
     public void sumarEnvido(View view){
@@ -136,8 +147,6 @@ public class MainActivity extends AppCompatActivity {
         if(sumaFinal >= 30){
             ganador = ellosString;
             dispararGanador(ganador);
-
-            
         }
 
     }
