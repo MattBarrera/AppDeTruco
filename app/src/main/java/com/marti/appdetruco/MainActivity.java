@@ -194,15 +194,41 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    public  void faltaEnvidoAPuntosEnvido(View view){
-//        TextView puntosFaltaEnvido = (TextView) findViewById(R.id.puntosDisputados1);
-//        String texto = puntosFaltaEnvido.getText().toString();
-//
-//        Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
-//        Hacer lo de el calculo del falta envido
+    public  void faltaEnvidoAPuntosEnvido(View view){
+        TextView puntosFaltaEnvido = (TextView) findViewById(R.id.puntosDisputados1);
+        String texto = puntosFaltaEnvido.getText().toString();
+        TextView puntosTeam1 = (TextView) findViewById(R.id.puntosTeam1);
+        String puntosTeam1Texto = puntosTeam1.getText().toString();
+        TextView puntosTeam2 = (TextView) findViewById(R.id.puntosTeam2);
+        String puntosTeam2Texto = puntosTeam2.getText().toString();
 
-//          clickFaltaEnvido++;
-//    }
+        Integer sumarAEnvido = Integer.valueOf(String.valueOf(texto));
+        Integer puntosTeam1Numero = Integer.valueOf(String.valueOf(puntosTeam1Texto));
+        Integer puntosTeam2Numero = Integer.valueOf(String.valueOf(puntosTeam2Texto));
+
+        Integer faltaEnvidoTeam1 = 0;
+        Integer faltaEnvidoTeam2 = 0;
+
+        if (clickFaltaEnvido == 0){
+            if (puntosTeam1Numero >= 15 || puntosTeam2Numero >= 15){
+                faltaEnvidoTeam1 = 30 - puntosTeam2Numero;
+                faltaEnvidoTeam2 = 30 - puntosTeam1Numero;
+            }
+
+            if (puntosTeam1Numero < 15 && puntosTeam2Numero < 15){
+                faltaEnvidoTeam1 = 30 - puntosTeam1Numero;
+                faltaEnvidoTeam2 = 30 -puntosTeam2Numero;
+            }
+
+            String falta1Texto = faltaEnvidoTeam1.toString();
+            String falta2Texto = faltaEnvidoTeam2.toString();
+
+            puntosFaltaEnvido.setText(falta1Texto + "-" + falta2Texto);
+        }
+
+
+          clickFaltaEnvido++;
+    }
 
     public void trucoAPuntosTruco(View view){
         if (clickRetruco == 1 || clickValeCuatro == 1){
