@@ -3,6 +3,7 @@ package com.marti.appdetruco;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class VistaGanador extends AppCompatActivity {
@@ -38,11 +39,9 @@ public class VistaGanador extends AppCompatActivity {
         unGanador.setText(unMensajeRecibido);
     }
 
-    public void reiniciarJuego(){
+    public void reiniciarJuego(View view){
 
-        Intent unIntent = new Intent(VistaGanador.this, MainActivity.class);
-        Bundle unBundle = new Bundle();
-        unIntent.putExtras(unBundle);
+        Intent unIntent = new Intent(this, MainActivity.class);
 
         startActivity(unIntent);
     }
