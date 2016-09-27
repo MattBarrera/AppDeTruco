@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private Integer clickTruco = 0;
     private Integer clickRetruco = 0;
     private Integer clickValeCuatro = 0;
-
+    private Integer ganadorFaltaEnvido1;
+    private Integer ganadorFaltaEnvido2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,53 +52,96 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sumarEnvido(View view){
-        TextView sumarEnvido = (TextView) findViewById(R.id.puntosDisputados1);
-        String texto = sumarEnvido.getText().toString();
         TextView puntosTeam1 = (TextView) findViewById(R.id.puntosTeam1);
         String textoPuntosTeam = puntosTeam1.getText().toString();
+
         TextView nosotros = (TextView) findViewById(R.id.nosotros);
         String nosotrosString = nosotros.getText().toString();
+
+        TextView sumarEnvido = (TextView) findViewById(R.id.puntosDisputados1);
+        String texto = sumarEnvido.getText().toString();
 
         Integer numeroSumarEnvido = Integer.valueOf(String.valueOf(texto));
         Integer numeroPuntosTeam1 = Integer.valueOf(String.valueOf(textoPuntosTeam));
 
-        Integer sumaFinal = numeroPuntosTeam1 + numeroSumarEnvido;
-        String puntosTeamFinal = sumaFinal.toString();
+        Integer gana;
+        String ganaString;
 
-        puntosTeam1.setText(puntosTeamFinal);
+        Integer sumaFinal;
+        String puntosTeamFinal;
+
+        if (clickFaltaEnvido == 1){
+            gana = ganadorFaltaEnvido1 + numeroPuntosTeam1;
+            ganaString = gana.toString();
+            puntosTeam1.setText(ganaString);
+
+        } else {
+
+            sumaFinal = numeroPuntosTeam1 + numeroSumarEnvido;
+            puntosTeamFinal = sumaFinal.toString();
+            puntosTeam1.setText(puntosTeamFinal);
+
+        }
+
+        TextView puntosTeam1Final = (TextView) findViewById(R.id.puntosTeam1);
+        String textoPuntosTeamFinal = puntosTeam1.getText().toString();
+
+        Integer numeroFinal = Integer.valueOf(String.valueOf(textoPuntosTeamFinal));
+
 
         sumarEnvido.setText("0");
 
         resetearContadorEnvido();
 
-        if(sumaFinal >= 30){
+        if(numeroFinal >= 30){
             ganador = nosotrosString;
             dispararGanador(ganador);
         }
     }
 
     public void sumarEnvido2(View view){
-        TextView sumarEnvido = (TextView) findViewById(R.id.puntosDisputados1);
-        String texto = sumarEnvido.getText().toString();
         TextView puntosTeam2 = (TextView) findViewById(R.id.puntosTeam2);
         String textoPuntosTeam = puntosTeam2.getText().toString();
-        TextView ellos = (TextView) findViewById(R.id.ellos);
-        String ellosString = ellos.getText().toString();
+
+        TextView nosotros = (TextView) findViewById(R.id.ellos);
+        String ellosString = nosotros.getText().toString();
+
+        TextView sumarEnvido = (TextView) findViewById(R.id.puntosDisputados1);
+        String texto = sumarEnvido.getText().toString();
 
         Integer numeroSumarEnvido = Integer.valueOf(String.valueOf(texto));
         Integer numeroPuntosTeam2 = Integer.valueOf(String.valueOf(textoPuntosTeam));
 
-        Integer sumaFinal = numeroPuntosTeam2 + numeroSumarEnvido;
+        Integer gana;
+        String ganaString;
 
-        String puntosTeamFinal = sumaFinal.toString();
+        Integer sumaFinal;
+        String puntosTeamFinal;
 
-        puntosTeam2.setText(puntosTeamFinal);
+        if (clickFaltaEnvido == 1){
+            gana = ganadorFaltaEnvido2 + numeroPuntosTeam2;
+            ganaString = gana.toString();
+            puntosTeam2.setText(ganaString);
+
+        } else {
+
+            sumaFinal = numeroPuntosTeam2 + numeroSumarEnvido;
+            puntosTeamFinal = sumaFinal.toString();
+            puntosTeam2.setText(puntosTeamFinal);
+
+        }
+
+        TextView puntosTeam1Final = (TextView) findViewById(R.id.puntosTeam1);
+        String textoPuntosTeamFinal = puntosTeam2.getText().toString();
+
+        Integer numeroFinal = Integer.valueOf(String.valueOf(textoPuntosTeamFinal));
+
 
         sumarEnvido.setText("0");
 
         resetearContadorEnvido();
 
-        if(sumaFinal >= 30){
+        if(numeroFinal >= 30){
             ganador = ellosString;
             dispararGanador(ganador);
         }
@@ -367,4 +411,24 @@ public class MainActivity extends AppCompatActivity {
         clickRetruco = 0;
         clickValeCuatro = 0;
     }
+
+    public void ganadorFaltaEnvido(){
+        if (clickFaltaEnvido == 1){
+            TextView puntosFaltaEnvido = (TextView) findViewById(R.id.puntosDisputados1);
+            String textoPuntosTeam = puntosFaltaEnvido.getText().toString();
+
+            textoPuntosTeam = textoPuntosTeam.trim();
+            Integer posicionGuionMedio = textoPuntosTeam.indexOf("-");
+            String puntosTeam1 = textoPuntosTeam.substring(0, posicionGuionMedio - 1);
+            String puntosTeam2 = textoPuntosTeam.substring(posicionGuionMedio + 1, textoPuntosTeam.length());
+
+            Integer puntosFalta1 = Integer.valueOf(String.valueOf(puntosTeam1));
+            Integer puntosFalta2 = Integer.valueOf(String.valueOf(puntosTeam2));
+
+            ganadorFaltaEnvido1 = puntosFalta1;
+            ganadorFaltaEnvido2 = puntosFalta2;
+
+        }
+    }
+
 }
