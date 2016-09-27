@@ -44,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
         textView2.setText("0");
         textView3.setText("0");
         textView4.setText("0");
-
-
     }
 
     public void sumarEnvido(View view){
@@ -70,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
             ganador = nosotrosString;
             dispararGanador(ganador);
         }
-
     }
 
     public void sumarEnvido2(View view){
@@ -96,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
             ganador = ellosString;
             dispararGanador(ganador);
         }
-
     }
 
     public void sumarTruco(View view){
@@ -122,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
             ganador = nosotrosString;
             dispararGanador(ganador);
         }
-
     }
 
     public void sumarTruco2(View view){
@@ -148,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
             ganador = ellosString;
             dispararGanador(ganador);
         }
-
     }
 
     public void envidoAPuntosEnvido(View view){
