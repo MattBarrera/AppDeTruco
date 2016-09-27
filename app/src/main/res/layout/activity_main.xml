@@ -169,8 +169,9 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:background="#303F9F"
-            android:textColor="#ffffff"/>
-            <!--android:onClick="faltaEnvidoAPuntosEnvido"-->
+            android:textColor="#ffffff"
+            android:onClick="faltaEnvidoAPuntosEnvido"
+            />
 
     </LinearLayout>
 

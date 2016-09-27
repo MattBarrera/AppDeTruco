@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
             String falta1Texto = faltaEnvidoTeam1.toString();
             String falta2Texto = faltaEnvidoTeam2.toString();
 
-            puntosFaltaEnvido.setText(falta1Texto + "-" + falta2Texto);
+            puntosFaltaEnvido.setText(falta1Texto + " - " + falta2Texto);
         }
 
 
