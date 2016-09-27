@@ -158,7 +158,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void envidoAPuntosEnvido(View view){
-        if (clickEnvido == 0 || clickEnvido == 1){
+        if (clickRealEnvido == 1 || clickFaltaEnvido == 1){
+
+        } else if (clickEnvido == 0 || clickEnvido == 1){
             TextView puntosEnvido = (TextView) findViewById(R.id.puntosDisputados1);
             String texto = puntosEnvido.getText().toString();
 
@@ -175,7 +177,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void realEnvidoPuntosEnvido(View view){
-        if (clickRealEnvido == 0 ){
+        if (clickFaltaEnvido == 1){
+
+        } else if (clickRealEnvido == 0 ){
             TextView puntosRealEnvido = (TextView) findViewById(R.id.puntosDisputados1);
             String texto = puntosRealEnvido.getText().toString();
 
@@ -201,7 +205,9 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     public void trucoAPuntosTruco(View view){
-        if (clickTruco == 0){
+        if (clickRetruco == 1 || clickValeCuatro == 1){
+
+        } else if(clickTruco == 0){
             TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
             String texto = puntosTruco.getText().toString();
 
@@ -217,7 +223,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void reTrucoAPuntosTruco(View view){
-        if (clickRetruco == 0 && clickTruco == 0){
+        if (clickValeCuatro == 1){
+
+        } else if (clickRetruco == 0 && clickTruco == 0){
             TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
             String texto = puntosTruco.getText().toString();
 
@@ -229,8 +237,7 @@ public class MainActivity extends AppCompatActivity {
             puntosTruco.setText(puntosTeamFinal);
 
             clickRetruco++;
-        }
-        if (clickTruco == 1 && clickRetruco == 0){
+        } else if (clickTruco == 1 && clickRetruco == 0){
             TextView puntosTruco = (TextView) findViewById(R.id.puntosDisputados2);
             String texto = puntosTruco.getText().toString();
 
