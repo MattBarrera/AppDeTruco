@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
 
         sumarEnvido.setText("0");
 
+        resetearContadorEnvido();
+
         if(sumaFinal >= 30){
             ganador = nosotrosString;
             dispararGanador(ganador);
@@ -92,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
         puntosTeam2.setText(puntosTeamFinal);
 
         sumarEnvido.setText("0");
+
+        resetearContadorEnvido();
 
         if(sumaFinal >= 30){
             ganador = ellosString;
@@ -118,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
 
         sumarTruco.setText("0");
 
+        resetearContadorTruco();
+
         if (sumaFinal >= 30){
             ganador = nosotrosString;
             dispararGanador(ganador);
@@ -142,6 +148,8 @@ public class MainActivity extends AppCompatActivity {
         puntosTeam1.setText(puntosTeamFinal);
 
         sumarTruco.setText("0");
+
+        resetearContadorTruco();
 
         if(sumaFinal >= 30){
             ganador = ellosString;
@@ -313,5 +321,17 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(unIntent);
 
+    }
+
+    public void resetearContadorEnvido(){
+        clickEnvido = 0;
+        clickRealEnvido = 0;
+        clickFaltaEnvido = 0;
+    }
+
+    public void resetearContadorTruco(){
+        clickTruco = 0;
+        clickRetruco = 0;
+        clickValeCuatro = 0;
     }
 }
