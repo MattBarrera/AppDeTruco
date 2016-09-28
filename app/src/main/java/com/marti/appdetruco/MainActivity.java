@@ -415,7 +415,7 @@ public class MainActivity extends AppCompatActivity {
 
             textoPuntosTeam = textoPuntosTeam.trim();
             Integer posicionGuionMedio = textoPuntosTeam.indexOf("-");
-            String puntosTeam1 = textoPuntosTeam.substring(0, posicionGuionMedio - 1);
+            String puntosTeam1 = textoPuntosTeam.substring(posicionGuionMedio - 1);
             String puntosTeam2 = textoPuntosTeam.substring(posicionGuionMedio + 1, textoPuntosTeam.length());
 
             Integer puntosFalta1 = Integer.valueOf(String.valueOf(puntosTeam1));
