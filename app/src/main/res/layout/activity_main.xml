@@ -47,77 +47,6 @@
             android:text="0"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/puntosDisputados1"
-            android:textSize="45dp"
-            android:text="0"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:paddingTop="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/puntosDisputados2"
-            android:textSize="45dp"
-            android:layout_below="@+id/puntosDisputados1"
-            android:layout_alignLeft="@+id/puntosDisputados1"
-            android:layout_alignStart="@+id/puntosDisputados1"
-            android:paddingTop="15dp"
-            android:text="0"/>
-
-        <Button
-            android:layout_width="130dp"
-            android:layout_height="65dp"
-            android:text="Sumar truco"
-            android:id="@+id/button8"
-            android:layout_below="@+id/button7"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:background="#3F51B5"
-            android:textColor="#ffffff"
-            android:onClick="sumarTruco" />
-
-        <Button
-            android:layout_width="130dp"
-            android:layout_height="65dp"
-            android:text="Sumar envido"
-            android:id="@+id/button9"
-            android:layout_above="@+id/button8"
-            android:layout_alignLeft="@+id/puntosTeam2"
-            android:layout_alignStart="@+id/puntosTeam2"
-            android:background="#303F9F"
-            android:textColor="#ffffff"
-            android:onClick="sumarEnvido2" />
-
-        <Button
-            android:layout_width="130dp"
-            android:layout_height="65dp"
-            android:text="Sumar truco"
-            android:id="@+id/button10"
-            android:layout_below="@+id/button9"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:background="#3F51B5"
-            android:textColor="#ffffff"
-            android:onClick="sumarTruco2" />
-
-        <Button
-            android:layout_width="130dp"
-            android:layout_height="65dp"
-            android:text="Sumar envido"
-            android:id="@+id/button7"
-            android:background="#303F9F"
-            android:textColor="#ffffff"
-            android:onClick="sumarEnvido"
-            android:layout_alignTop="@+id/puntosDisputados1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <TextView
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -129,6 +58,87 @@
             android:layout_below="@+id/nosotros"
             android:layout_alignRight="@+id/nosotros"
             android:layout_alignEnd="@+id/nosotros" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/puntosTeam2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="28dp"
+            android:id="@+id/linearLayout5"
+            android:layout_height="75dp">
+
+            <Button
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:text="Sumar envido"
+                android:id="@+id/button9"
+                android:background="#303F9F"
+                android:textColor="#ffffff"
+                android:onClick="sumarEnvido2"
+                android:layout_weight="1" />
+
+            <TextView
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/puntosDisputados1"
+                android:textSize="45dp"
+                android:text="0"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_height="match_parent"
+                android:layout_width="0px" />
+
+            <Button
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:text="Sumar envido"
+                android:id="@+id/button7"
+                android:background="#303F9F"
+                android:textColor="#ffffff"
+                android:onClick="sumarEnvido"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/linearLayout5"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_height="75dp">
+
+            <Button
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:text="Sumar truco"
+                android:id="@+id/button8"
+                android:background="#3F51B5"
+                android:textColor="#ffffff"
+                android:onClick="sumarTruco"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/puntosDisputados2"
+                android:textSize="45dp"
+                android:text="0"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal" />
+
+            <Button
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:text="Sumar truco"
+                android:id="@+id/button10"
+                android:background="#3F51B5"
+                android:textColor="#ffffff"
+                android:onClick="sumarTruco2"
+                android:layout_weight="1" />
+        </LinearLayout>
+
     </RelativeLayout>
 
     <LinearLayout

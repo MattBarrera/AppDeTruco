@@ -8,10 +8,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
-//    hoal que tal
-
     public String ganador;
     private Integer clickEnvido = 0;
     private Integer clickRealEnvido = 0;
