@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         TextView puntosTeam1Final = (TextView) findViewById(R.id.puntosTeam1);
-        String textoPuntosTeamFinal = puntosTeam1.getText().toString();
+        String textoPuntosTeamFinal = puntosTeam1Final.getText().toString();
 
         Integer numeroFinal = Integer.valueOf(String.valueOf(textoPuntosTeamFinal));
 
@@ -127,8 +127,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        TextView puntosTeam1Final = (TextView) findViewById(R.id.puntosTeam1);
-        String textoPuntosTeamFinal = puntosTeam2.getText().toString();
+        TextView puntosTeam1Final = (TextView) findViewById(R.id.puntosTeam2);
+        String textoPuntosTeamFinal = puntosTeam1Final.getText().toString();
 
         Integer numeroFinal = Integer.valueOf(String.valueOf(textoPuntosTeamFinal));
 
@@ -263,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
             String falta1Texto = faltaEnvidoTeam1.toString();
             String falta2Texto = faltaEnvidoTeam2.toString();
 
-            puntosFaltaEnvido.setText(falta1Texto + " - " + falta2Texto);
+            puntosFaltaEnvido.setText(falta1Texto + "-" + falta2Texto);
         }
 
 
