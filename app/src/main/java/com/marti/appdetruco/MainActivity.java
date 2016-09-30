@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         String puntosTeamFinal;
 
         if (clickFaltaEnvido == 1){
-            ganadorFaltaEnvido();
+            ganadorFaltaEnvido(); 
             gana = ganadorFaltaEnvido2 + numeroPuntosTeam2;
             ganaString = gana.toString();
             puntosTeam2.setText(ganaString);
