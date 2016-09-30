@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         TextView sumarEnvido = (TextView) findViewById(R.id.puntosDisputados1);
         String texto = sumarEnvido.getText().toString();
 
-        Integer numeroSumarEnvido = Integer.valueOf(String.valueOf(texto));
         Integer numeroPuntosTeam1 = Integer.valueOf(String.valueOf(textoPuntosTeam));
 
         Integer gana;
@@ -91,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             puntosTeam1.setText(ganaString);
 
         } else {
+            Integer numeroSumarEnvido = Integer.valueOf(String.valueOf(texto));
 
             sumaFinal = numeroPuntosTeam1 + numeroSumarEnvido;
             puntosTeamFinal = sumaFinal.toString();
@@ -124,7 +124,6 @@ public class MainActivity extends AppCompatActivity {
         TextView sumarEnvido = (TextView) findViewById(R.id.puntosDisputados1);
         String texto = sumarEnvido.getText().toString();
 
-        Integer numeroSumarEnvido = Integer.valueOf(String.valueOf(texto));
         Integer numeroPuntosTeam2 = Integer.valueOf(String.valueOf(textoPuntosTeam));
 
         Integer gana;
@@ -140,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
             puntosTeam2.setText(ganaString);
 
         } else {
+            Integer numeroSumarEnvido = Integer.valueOf(String.valueOf(texto));
 
             sumaFinal = numeroPuntosTeam2 + numeroSumarEnvido;
             puntosTeamFinal = sumaFinal.toString();
