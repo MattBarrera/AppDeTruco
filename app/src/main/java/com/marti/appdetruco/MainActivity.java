@@ -413,7 +413,6 @@ public class MainActivity extends AppCompatActivity {
             TextView puntosFaltaEnvido = (TextView) findViewById(R.id.puntosDisputados1);
             String textoPuntosTeam = puntosFaltaEnvido.getText().toString();
 
-            textoPuntosTeam = textoPuntosTeam.trim();
             Integer posicionGuionMedio = textoPuntosTeam.indexOf("-");
             String puntosTeam1 = textoPuntosTeam.substring(posicionGuionMedio - 1);
             String puntosTeam2 = textoPuntosTeam.substring(posicionGuionMedio + 1, textoPuntosTeam.length());
