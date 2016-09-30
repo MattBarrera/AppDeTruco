@@ -239,8 +239,10 @@ public class MainActivity extends AppCompatActivity {
     public  void faltaEnvidoAPuntosEnvido(View view){
         TextView puntosFaltaEnvido = (TextView) findViewById(R.id.puntosDisputados1);
         String texto = puntosFaltaEnvido.getText().toString();
+
         TextView puntosTeam1 = (TextView) findViewById(R.id.puntosTeam1);
         String puntosTeam1Texto = puntosTeam1.getText().toString();
+
         TextView puntosTeam2 = (TextView) findViewById(R.id.puntosTeam2);
         String puntosTeam2Texto = puntosTeam2.getText().toString();
 
