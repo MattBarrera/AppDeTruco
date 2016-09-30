@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         String puntosTeamFinal;
 
         if (clickFaltaEnvido == 1){
+            ganadorFaltaEnvido();
             gana = ganadorFaltaEnvido1 + numeroPuntosTeam1;
             ganaString = gana.toString();
             puntosTeam1.setText(ganaString);
@@ -115,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         String puntosTeamFinal;
 
         if (clickFaltaEnvido == 1){
+            ganadorFaltaEnvido();
             gana = ganadorFaltaEnvido2 + numeroPuntosTeam2;
             ganaString = gana.toString();
             puntosTeam2.setText(ganaString);
@@ -263,7 +265,7 @@ public class MainActivity extends AppCompatActivity {
             String falta1Texto = faltaEnvidoTeam1.toString();
             String falta2Texto = faltaEnvidoTeam2.toString();
 
-            puntosFaltaEnvido.setText(falta1Texto + "-" + falta2Texto);
+            puntosFaltaEnvido.setText(falta1Texto + " - " + falta2Texto);
         }
 
 
@@ -414,8 +416,8 @@ public class MainActivity extends AppCompatActivity {
             String textoPuntosTeam = puntosFaltaEnvido.getText().toString();
 
             Integer posicionGuionMedio = textoPuntosTeam.indexOf("-");
-            String puntosTeam1 = textoPuntosTeam.substring(posicionGuionMedio - 1);
-            String puntosTeam2 = textoPuntosTeam.substring(posicionGuionMedio + 1, textoPuntosTeam.length());
+            String puntosTeam1 = textoPuntosTeam.substring(0, posicionGuionMedio - 1);
+            String puntosTeam2 = textoPuntosTeam.substring(posicionGuionMedio + 2, textoPuntosTeam.length());
 
             Integer puntosFalta1 = Integer.valueOf(String.valueOf(puntosTeam1));
             Integer puntosFalta2 = Integer.valueOf(String.valueOf(puntosTeam2));

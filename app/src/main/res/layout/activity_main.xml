@@ -76,7 +76,7 @@
                 android:id="@+id/button9"
                 android:background="#303F9F"
                 android:textColor="#ffffff"
-                android:onClick="sumarEnvido2"
+                android:onClick="sumarEnvido"
                 android:layout_weight="1" />
 
             <TextView
@@ -96,7 +96,7 @@
                 android:id="@+id/button7"
                 android:background="#303F9F"
                 android:textColor="#ffffff"
-                android:onClick="sumarEnvido"
+                android:onClick="sumarEnvido2"
                 android:layout_weight="1" />
         </LinearLayout>
 
