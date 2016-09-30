@@ -47,6 +47,24 @@ public class MainActivity extends AppCompatActivity {
         textView4.setText("0");
     }
 
+    public void ganadorFaltaEnvido(){
+        if (clickFaltaEnvido == 1){
+            TextView puntosFaltaEnvido = (TextView) findViewById(R.id.puntosDisputados1);
+            String textoPuntosTeam = puntosFaltaEnvido.getText().toString();
+
+            Integer posicionGuionMedio = textoPuntosTeam.indexOf("-");
+            String puntosTeam1 = textoPuntosTeam.substring(0, posicionGuionMedio - 1);
+            String puntosTeam2 = textoPuntosTeam.substring(posicionGuionMedio + 2, textoPuntosTeam.length());
+
+            Integer puntosFalta1 = Integer.valueOf(String.valueOf(puntosTeam1));
+            Integer puntosFalta2 = Integer.valueOf(String.valueOf(puntosTeam2));
+
+            ganadorFaltaEnvido1 = puntosFalta1;
+            ganadorFaltaEnvido2 = puntosFalta2;
+
+        }
+    }
+
     public void sumarEnvido(View view){
         TextView puntosTeam1 = (TextView) findViewById(R.id.puntosTeam1);
         String textoPuntosTeam = puntosTeam1.getText().toString();
@@ -116,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         String puntosTeamFinal;
 
         if (clickFaltaEnvido == 1){
-            ganadorFaltaEnvido(); 
+            ganadorFaltaEnvido();
             gana = ganadorFaltaEnvido2 + numeroPuntosTeam2;
             ganaString = gana.toString();
             puntosTeam2.setText(ganaString);
@@ -410,24 +428,6 @@ public class MainActivity extends AppCompatActivity {
         clickTruco = 0;
         clickRetruco = 0;
         clickValeCuatro = 0;
-    }
-
-    public void ganadorFaltaEnvido(){
-        if (clickFaltaEnvido == 1){
-            TextView puntosFaltaEnvido = (TextView) findViewById(R.id.puntosDisputados1);
-            String textoPuntosTeam = puntosFaltaEnvido.getText().toString();
-
-            Integer posicionGuionMedio = textoPuntosTeam.indexOf("-");
-            String puntosTeam1 = textoPuntosTeam.substring(0, posicionGuionMedio - 1);
-            String puntosTeam2 = textoPuntosTeam.substring(posicionGuionMedio + 2, textoPuntosTeam.length());
-
-            Integer puntosFalta1 = Integer.valueOf(String.valueOf(puntosTeam1));
-            Integer puntosFalta2 = Integer.valueOf(String.valueOf(puntosTeam2));
-
-            ganadorFaltaEnvido1 = puntosFalta1;
-            ganadorFaltaEnvido2 = puntosFalta2;
-
-        }
     }
 
 }
