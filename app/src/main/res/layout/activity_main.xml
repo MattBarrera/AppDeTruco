@@ -75,7 +75,6 @@
                 android:text="Sumar envido"
                 android:id="@+id/button9"
                 android:background="#303F9F"
-                android:textColor="#ffffff"
                 android:onClick="sumarEnvido"
                 android:layout_weight="1" />
 
